@@ -13,29 +13,49 @@ st.set_page_config(
 # Custom CSS เพื่อความสวยงาม
 st.markdown("""
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+    html, body, [class*="css"] {
+        font-family: 'Kanit', sans-serif;
+    }
+
     .main-header {
-        font-size: 50px !important;
-        font-weight: bold;
-        color: #FF4B4B;
+        font-size: 48px !important;
+        font-weight: 700;
+        background: -webkit-linear-gradient(45deg, #FF4B4B, #FF9068);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         text-align: center;
-        text-shadow: 2px 2px 4px #00000020;
+        margin-bottom: 10px;
+        padding-top: 20px;
     }
+    
     .sub-header {
-        font-size: 25px !important;
-        color: #31333F;
+        font-size: 24px !important;
+        font-weight: 300;
+        color: #555;
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
+    
     .card-container {
-        background-color: #f0f2f6;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         text-align: center;
-        transition: transform 0.3s;
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
     }
+    
     .card-container:hover {
-        transform: scale(1.05);
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        border-color: #FF4B4B;
+    }
+    
+    img {
+        border-radius: 12px;
     }
 </style>
 """, unsafe_allow_html=True)
