@@ -4,6 +4,55 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+st.markdown("""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+    html, body, [class*="css"] {
+        font-family: 'Kanit', sans-serif;
+    }
+
+    .main-header {
+        font-size: 48px !important;
+        font-weight: 700;
+        background: -webkit-linear-gradient(45deg, #FF4B4B, #FF9068);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        margin-bottom: 10px;
+        padding-top: 20px;
+    }
+    
+    .sub-header {
+        font-size: 24px !important;
+        font-weight: 300;
+        color: #555;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .card-container {
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+    }
+    
+    .card-container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        border-color: #FF4B4B;
+    }
+    
+    img {
+        border-radius: 12px;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.header("โปรเจคการจำแนกข้อมูลดอกไม้")
 st.image("./img/seksun.jpg")
 col1, col2, col3 = st.columns(3)
@@ -28,3 +77,14 @@ html_7 = """
 
 st.markdown(html_7, unsafe_allow_html=True)
 st.markdown("")
+
+dt = pd.read_csv("./data/iris.csv")
+st.write(dt.head(10))
+
+dt1 = dt['petal.length'].sum()
+dt2 = dt['petal.width'].sum()
+dt3 = dt['sepal.length'].sum()
+dt4 = dt['sepal.width'].sum()
+
+dx = [dt1, dt2, dt3, dt4]
+dx2 = pd.DataFrame(dx, index=["d1", "d2", "d3", "d4"])
